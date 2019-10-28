@@ -41,7 +41,7 @@
                 </a>
             </li>
 
-            <li class="nav-title">Components</li>
+            <li class="nav-title">More</li>
             
             <li class="nav-item">
                 <a href="#" class="nav-link">
@@ -50,7 +50,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('app.settings.index') }}" class="nav-link">
                     <i class="nav-icon icon-settings"></i> Settings
                 </a>
             </li>

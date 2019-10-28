@@ -19,4 +19,11 @@ Auth::routes();
 
 Route::group(['middleware'  =>  'auth', 'prefix' => 'app', 'as' => 'app.'], function() {
     Route::get('/', 'HomeController@index')->name('dashboard');
+
+    /**
+     * Routes for Settings
+     */
+    Route::group(['prefix' => 'settings', 'as' => 'settings.'], function() {
+        Route::get('/', 'Core\Settings\SettingsController@index')->name('index');
+    });
 });

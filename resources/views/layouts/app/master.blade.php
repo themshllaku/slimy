@@ -12,13 +12,6 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         <link href="{{ asset('vendors/pace-progress/css/pace.min.css') }}" rel="stylesheet">
-
-        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-        <style>
-            html, body {
-                font-family: 'Lato', sans-serif;
-            }
-        </style>
     </head>
 
     <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
