@@ -42,9 +42,9 @@
             </li>
 
             <li class="nav-title">More</li>
-            
+
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('app.users.index') }}" class="nav-link">
                     <i class="nav-icon icon-user-following"></i> Users
                 </a>
             </li>

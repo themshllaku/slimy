@@ -17,13 +17,23 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::group(['middleware'  =>  'auth', 'prefix' => 'app', 'as' => 'app.'], function() {
+Route::group(['middleware'  =>  'auth', 'prefix' => 'app', 'as' => 'app.'], function () {
     Route::get('/', 'HomeController@index')->name('dashboard');
+
+    /**
+     * Routes for Users
+     */
+    Route::group(['prefix' => 'users', 'as' => 'users.'], function () {
+        Route::get('/', 'Core\Users\UsersController@index')->name('index');
+        Route::get('/profile/{id}', 'Core\Users\UsersController@profile')->name('profile');
+        Route::put('/profile/{id}', 'Core\Users\UsersController@updateProfile')->name('update-profile');
+    });
 
     /**
      * Routes for Settings
      */
-    Route::group(['prefix' => 'settings', 'as' => 'settings.'], function() {
+    Route::group(['prefix' => 'settings', 'as' => 'settings.'], function () {
         Route::get('/', 'Core\Settings\SettingsController@index')->name('index');
+        Route::put('/', 'Core\Settings\SettingsController@updateGeneral')->name('update-general');
     });
 });

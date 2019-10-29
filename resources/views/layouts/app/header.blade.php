@@ -12,7 +12,11 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <ul class="nav navbar-nav d-md-down-none"></ul>
+    <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item">
+            <span class="text-muted">{{ auth()->user()->organisation->name }}</span>
+        </li>
+    </ul>
 
     <ul class="nav navbar-nav ml-auto">
         <li class="nav-item dropdown mx-3">
@@ -24,6 +28,10 @@
                 <div class="dropdown-header text-center">
                     <strong>Account</strong>
                 </div>
+
+                <a class="dropdown-item" href="{{ route('app.users.profile', ['id' => auth()->user()->id]) }}">
+                    <i class="fa fa-user"></i> My Profile
+                </a>
 
                 <a class="dropdown-item" href="#">
                     <i class="fa fa-lock"></i> Logout

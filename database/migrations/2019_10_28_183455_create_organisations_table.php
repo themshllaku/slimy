@@ -22,6 +22,10 @@ class CreateOrganisationsTable extends Migration
             $table->string('tax_number')->nullable();
             $table->timestamps();
         });
+
+        Schema::table('users', function ($table) {
+            $table->foreign('organisation_id')->references('id')->on('organisations');
+        });
     }
 
     /**
