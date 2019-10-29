@@ -54,6 +54,26 @@
                     <i class="nav-icon icon-settings"></i> Settings
                 </a>
             </li>
+
+            <li class="nav-item nav-dropdown">
+                <a href="#" class="nav-link nav-dropdown-toggle">
+                    <i class="nav-icon icon-bulb"></i> More
+                </a>
+
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a href="{{ route('app.more.currencies') }}" class="nav-link">
+                            <i class="nav-icon icon-arrow-right"></i> Currencies
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon icon-arrow-right"></i> Tax
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </nav>
 </div>

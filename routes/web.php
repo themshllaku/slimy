@@ -36,4 +36,13 @@ Route::group(['middleware'  =>  'auth', 'prefix' => 'app', 'as' => 'app.'], func
         Route::get('/', 'Core\Settings\SettingsController@index')->name('index');
         Route::put('/', 'Core\Settings\SettingsController@updateGeneral')->name('update-general');
     });
+
+    /**
+     * Routes for More Settings
+     */
+    Route::group(['prefix' => 'more', 'as' => 'more.'], function () {
+        Route::get('/currencies', 'Core\More\CurrenciesController@index')->name('currencies');
+        Route::get('/currencies/create', 'Core\More\CurrenciesController@create')->name('currencies.create');
+        Route::post('/currencies/store', 'Core\More\CurrenciesController@store')->name('currencies.store');
+    });
 });
